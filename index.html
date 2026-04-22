@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giuseppe Santoro — Manual de Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --nero: #080808;
+    --nero2: #111111;
+    --nero3: #1a1a1a;
+    --verde: #004D2A;
+    --verde-vivo: #006B38;
+    --verde-light: #00A854;
+    --bianco: #F5F0E8;
+    --rosso: #C8001E;
+    --rosso-vivo: #E8001E;
+    --oro: #C8960C;
+    --oro-light: #E8B020;
+    --grigio: #888880;
+    --grigio-light: #BBBBBB;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--nero);
+    color: var(--bianco);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,0,30,0.2);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.25em;
+    color: var(--bianco);
+  }
+  .nav-logo span { color: var(--rosso); }
+  nav ul {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  nav ul li a {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav ul li a:hover { color: var(--bianco); }
+
+  /* ─── SECTIONS ─── */
+  section { min-height: 100vh; position: relative; overflow: hidden; }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 8rem 3rem 6rem; }
+
+  /* ─── COVER ─── */
+  #cover {
+    background: var(--nero);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .flag-bg {
+    position: absolute; inset: 0;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    opacity: 0.07;
+  }
+  .flag-bg .f-verde { background: var(--verde); }
+  .flag-bg .f-bianco { background: #F5F0E8; }
+  .flag-bg .f-rosso { background: var(--rosso); }
+
+  .diagonal-line {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--rosso) 40%, var(--rosso) 60%, transparent);
+    opacity: 0.4;
+    animation: slideLine 8s ease-in-out infinite alternate;
+  }
+  @keyframes slideLine { from { transform: translateX(-60px); } to { transform: translateX(60px); } }
+
+  .cover-content {
+    text-align: center;
+    position: relative; z-index: 2;
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .logo-mark {
+    margin: 2rem auto;
+    width: 180px; height: 180px;
+    position: relative;
+  }
+
+  h1.brand-name {
+    font-family: var(--font-serif);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--bianco);
+  }
+  h1.brand-name em {
+    font-style: italic;
+    color: var(--rosso);
+  }
+
+  .subtitle-tag {
+    margin-top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.5em;
+    color: var(--grigio-light);
+    display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+  }
+  .subtitle-tag::before, .subtitle-tag::after {
+    content: '';
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--grigio));
+  }
+
+  .since-tag {
+    margin-top: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.6rem 1.8rem;
+    border-radius: 0;
+  }
+
+  .flag-stripe-cover {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 6px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+  }
+  .flag-stripe-cover > div:nth-child(1) { background: var(--verde); }
+  .flag-stripe-cover > div:nth-child(2) { background: var(--bianco); }
+  .flag-stripe-cover > div:nth-child(3) { background: var(--rosso); }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-num {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--rosso);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  h2.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 3rem;
+    color: var(--bianco);
+  }
+  h2.section-title span { color: var(--rosso); font-style: italic; }
+
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(to right, var(--rosso), transparent);
+    margin: 3rem 0;
+  }
+
+  /* ─── BRAND STORY ─── */
+  #story { background: var(--nero2); }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .story-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--grigio-light);
+    margin-bottom: 1.5rem;
+  }
+  .story-text p strong {
+    color: var(--bianco);
+    font-weight: 500;
+  }
+  .story-pull {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--bianco);
+    border-left: 3px solid var(--rosso);
+    padding-left: 2rem;
+  }
+  .values-list {
+    margin-top: 2.5rem;
+    list-style: none;
+  }
+  .values-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.9rem;
+    color: var(--grigio-light);
+  }
+  .values-list li .val-icon {
+    width: 24px; height: 24px; min-width: 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+  }
+  .v-verde { color: var(--verde-light); border: 1px solid var(--verde); }
+  .v-bianco { color: var(--bianco); border: 1px solid rgba(255,255,255,0.3); }
+  .v-rosso { color: var(--rosso-vivo); border: 1px solid var(--rosso); }
+  .values-list li strong { color: var(--bianco); font-weight: 500; display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+
+  /* ─── LOGO ─── */
+  #logo { background: var(--nero); }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .logo-box {
+    padding: 3rem 2rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-box::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .logo-box.lb-primary::before { background: linear-gradient(to right, var(--verde), var(--bianco), var(--rosso)); }
+  .logo-box.lb-white { background: var(--bianco); }
+  .logo-box.lb-white::before { background: linear-gradient(to right, var(--verde), #888, var(--rosso)); }
+  .logo-box.lb-dark { background: var(--nero3); }
+  .logo-box.lb-dark::before { background: rgba(255,255,255,0.2); }
+
+  .logo-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    text-align: center;
+  }
+  .logo-box.lb-white .logo-label { color: #888; }
+
+  /* ─── PALETTE ─── */
+  #palette { background: var(--nero2); }
+  .palette-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 320px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+  .palette-swatch {
+    position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 1.5rem;
+    transition: flex 0.4s ease;
+    cursor: default;
+  }
+  .palette-swatch:hover { flex: 1.4; }
+  .sw-verde { background: var(--verde); }
+  .sw-bianco { background: var(--bianco); }
+  .sw-rosso { background: var(--rosso); }
+
+  .swatch-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+  }
+  .swatch-hex {
+    font-family: 'DM Sans', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    margin-top: 0.4rem;
+    opacity: 0.7;
+  }
+  .swatch-role {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    opacity: 0.6;
+  }
+  .sw-verde .swatch-name,
+  .sw-verde .swatch-hex,
+  .sw-verde .swatch-role { color: #a8e8c8; }
+  .sw-bianco .swatch-name { color: var(--nero); }
+  .sw-bianco .swatch-hex { color: #555; }
+  .sw-bianco .swatch-role { color: #666; }
+  .sw-rosso .swatch-name,
+  .sw-rosso .swatch-hex,
+  .sw-rosso .swatch-role { color: #ffb8c2; }
+
+  .palette-secondary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .sec-swatch {
+    height: 100px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 1rem;
+    border-radius: 2px;
+  }
+  .ss-nero { background: var(--nero3); border: 1px solid rgba(255,255,255,0.08); }
+  .ss-oro { background: var(--oro); }
+  .ss-grigio { background: #333330; }
+  .ss-crema { background: #2A1A0A; border: 1px solid rgba(200,150,12,0.2); }
+
+  /* ─── TYPOGRAPHY ─── */
+  #typography { background: var(--nero); }
+  .type-hero {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+  }
+  .type-display-sample {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.85;
+    color: var(--bianco);
+    letter-spacing: 0.05em;
+  }
+  .type-display-sample em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--rosso);
+    font-size: 0.7em;
+    letter-spacing: -0.01em;
+  }
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .type-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .type-specimen {
+    margin-bottom: 1.5rem;
+  }
+  .type-info {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ─── APPLICATIONS ─── */
+  #applications { background: var(--nero2); }
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* Business Card */
+  .biz-card {
+    background: var(--nero);
+    border: 1px solid rgba(255,255,255,0.06);
+    aspect-ratio: 1.7/1;
+    display: flex; align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .biz-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    height: 3px; width: 100%;
+    background: linear-gradient(to right, var(--verde) 33.3%, var(--bianco) 33.3% 66.6%, var(--rosso) 66.6%);
+  }
+  .biz-card .bc-name {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--bianco);
+    line-height: 1.2;
+  }
+  .biz-card .bc-name em { font-style: italic; color: var(--rosso); }
+  .biz-card .bc-role {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    margin-top: 0.5rem;
+  }
+  .biz-card .bc-contact {
+    font-size: 0.65rem;
+    color: var(--grigio-light);
+    margin-top: 1rem;
+    line-height: 1.8;
+  }
+  .biz-card .bc-right {
+    margin-left: auto;
+    text-align: right;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem;
+  }
+  .bc-geo {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grigio);
+  }
+  .bc-star-line {
+    display: flex; gap: 4px; align-items: center; margin-top: 0.5rem;
+  }
+  .bc-star { width: 6px; height: 6px; background: var(--rosso); transform: rotate(45deg); }
+
+  /* Menu Header */
+  .menu-header {
+    background: var(--nero);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 2.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .menu-flag-bar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--verde) 33.3%, var(--bianco) 33.3% 66.6%, var(--rosso) 66.6%);
+  }
+  .menu-category {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--rosso);
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+  }
+  .menu-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--bianco);
+    margin-left: 1rem;
+  }
+  .menu-title em { font-style: italic; color: var(--grigio-light); font-size: 0.6em; vertical-align: super; }
+  .menu-items {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    list-style: none;
+  }
+  .menu-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.85rem;
+    color: var(--grigio-light);
+  }
+  .menu-items li::before { content: ''; }
+  .menu-dot-line {
+    flex: 1; height: 1px; margin: 0 1rem;
+    background: repeating-linear-gradient(to right, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.12) 4px, transparent 4px, transparent 8px);
+  }
+  .menu-price { color: var(--bianco); font-weight: 500; }
+  .menu-item-name-wrap { display: flex; flex-direction: column; }
+  .menu-item-desc { font-size: 0.68rem; color: var(--grigio); margin-top: 0.2rem; }
+
+  /* Bolsa / Packaging */
+  .packaging-box {
+    background: var(--nero3);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 240px;
+    position: relative;
+  }
+  .stamp-circle {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .stamp-circle::before {
+    content: '';
+    position: absolute; inset: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .stamp-inner-name {
+    font-family: var(--font-serif);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: var(--bianco);
+    line-height: 1.3;
+  }
+  .stamp-inner-name em { color: var(--rosso); font-style: italic; display: block; font-size: 0.8em; }
+  .stamp-flag-dots {
+    display: flex; gap: 4px; margin-top: 0.5rem;
+  }
+  .sfd { width: 6px; height: 2px; }
+
+  .app-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* ─── SIGNAGE MOCKUP ─── */
+  .signage-full {
+    grid-column: 1 / -1;
+    background: #1C1C1C;
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 200px;
+    position: relative; overflow: hidden;
+  }
+  .sign-inner {
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+  .sign-flag-bar {
+    display: flex; height: 5px; margin-bottom: 1.5rem; border-radius: 1px;
+  }
+  .sign-flag-bar div { flex: 1; }
+  .sign-flag-bar div:nth-child(1) { background: var(--verde); }
+  .sign-flag-bar div:nth-child(2) { background: var(--bianco); }
+  .sign-flag-bar div:nth-child(3) { background: var(--rosso); }
+
+  .sign-name {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--bianco);
+    letter-spacing: -0.01em;
+  }
+  .sign-name em { color: var(--rosso); font-style: italic; }
+  .sign-pizzeria {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.6em;
+    color: var(--grigio-light);
+    margin-top: 0.3rem;
+  }
+  .sign-flag-bar-bottom { margin-top: 1.5rem; }
+  .sign-stars {
+    display: flex; gap: 8px; justify-content: center; margin-top: 1rem;
+    align-items: center;
+  }
+  .sign-star {
+    width: 8px; height: 8px;
+    background: var(--oro);
+    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  }
+  .sign-star.big { width: 12px; height: 12px; }
+
+  /* ─── VOICE ─── */
+  #voice { background: var(--nero); }
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .voice-card {
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+  .voice-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+  .vc-verde::before { background: var(--verde-light); }
+  .vc-bianco::before { background: rgba(245,240,232,0.5); }
+  .vc-rosso::before { background: var(--rosso); }
+
+  .voice-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    color: var(--bianco);
+    margin-bottom: 1rem;
+  }
+  .voice-card p {
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--grigio-light);
+  }
+  .voice-pair {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .vp-card {
+    padding: 2rem;
+  }
+  .vp-card.wrong {
+    background: rgba(200,0,30,0.05);
+    border: 1px solid rgba(200,0,30,0.15);
+  }
+  .vp-card.right {
+    background: rgba(0,77,42,0.08);
+    border: 1px solid rgba(0,168,84,0.2);
+  }
+  .vp-tag {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1rem; display: block;
+  }
+  .wrong .vp-tag { color: var(--rosso); }
+  .right .vp-tag { color: var(--verde-light); }
+  .vp-card blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--grigio-light);
+  }
+  .wrong blockquote { text-decoration: line-through; opacity: 0.6; }
+  .right blockquote { color: var(--bianco); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--nero);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem;
+    text-align: center;
+  }
+  .footer-flag {
+    display: flex; height: 3px; max-width: 200px; margin: 0 auto 2rem;
+  }
+  .footer-flag div { flex: 1; }
+  .footer-flag div:nth-child(1) { background: var(--verde); }
+  .footer-flag div:nth-child(2) { background: var(--bianco); }
+  .footer-flag div:nth-child(3) { background: var(--rosso); }
+  footer p { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grigio); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.9s ease forwards; }
+  .fade-up-2 { animation: fadeUp 0.9s ease 0.15s forwards; opacity: 0; }
+  .fade-up-3 { animation: fadeUp 0.9s ease 0.3s forwards; opacity: 0; }
+  .fade-up-4 { animation: fadeUp 0.9s ease 0.45s forwards; opacity: 0; }
+
+  @keyframes pulse-border {
+    0%, 100% { border-color: rgba(200,0,30,0.2); }
+    50% { border-color: rgba(200,0,30,0.5); }
+  }
+  nav { animation: pulse-border 4s ease infinite; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .section-inner { padding: 5rem 1.5rem 4rem; }
+    .story-grid, .logo-grid, .type-grid, .app-grid, .voice-grid { grid-template-columns: 1fr; }
+    .palette-secondary { grid-template-columns: 1fr 1fr; }
+    .voice-pair { grid-template-columns: 1fr; }
+    h1.brand-name { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">GIUSEPPE <span>SANTORO</span></div>
+  <ul>
+    <li><a href="#story">Historia</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#palette">Color</a></li>
+    <li><a href="#typography">Tipo</a></li>
+    <li><a href="#applications">Aplicaciones</a></li>
+    <li><a href="#voice">Voz</a></li>
+  </ul>
+</nav>
+
+<!-- ─── COVER ─── -->
+<section id="cover">
+  <div class="flag-bg">
+    <div class="f-verde"></div>
+    <div class="f-bianco"></div>
+    <div class="f-rosso"></div>
+  </div>
+
+  <!-- Diagonal accent lines -->
+  <div class="diagonal-line" style="left:20%;height:100%;top:0;"></div>
+  <div class="diagonal-line" style="right:20%;height:100%;top:0;animation-delay:-4s;opacity:0.2;"></div>
+
+  <div class="cover-content">
+    <span class="eyebrow fade-up">Manual de Marca — Nueva York · Medellín</span>
+
+    <!-- SVG Logo Mark -->
+    <div class="logo-mark fade-up-2">
+      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+        <!-- Outer ring — Italian flag tricolor -->
+        <circle cx="90" cy="90" r="82" fill="none" stroke="#004D2A" stroke-width="6"/>
+        <circle cx="90" cy="90" r="76" fill="none" stroke="#C8001E" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+        <!-- Flag arcs — powerful -->
+        <path d="M90 8 A82 82 0 0 1 161 130" fill="none" stroke="#004D2A" stroke-width="5" stroke-linecap="round"/>
+        <path d="M161 130 A82 82 0 0 1 19 130" fill="none" stroke="#F5F0E8" stroke-width="5" stroke-linecap="round"/>
+        <path d="M19 130 A82 82 0 0 1 90 8" fill="none" stroke="#C8001E" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- Chef hat — geometric, minimal -->
+        <ellipse cx="90" cy="68" rx="22" ry="14" fill="#F5F0E8"/>
+        <rect x="68" y="68" width="44" height="10" rx="2" fill="#F5F0E8"/>
+        <ellipse cx="78" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+        <ellipse cx="90" cy="58" rx="10" ry="13" fill="#F5F0E8"/>
+        <ellipse cx="102" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+
+        <!-- Crossed cutlery — bold & slim -->
+        <line x1="72" y1="100" x2="108" y2="140" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="108" y1="100" x2="72" y2="140" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- GS monogram -->
+        <text x="90" y="159" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="10" fill="#F5F0E8" letter-spacing="4">GS</text>
+      </svg>
+    </div>
+
+    <h1 class="brand-name fade-up-3">
+      Giuseppe<br><em>Santoro</em>
+    </h1>
+    <div class="subtitle-tag fade-up-4">PIZZERIA</div>
+    <div class="since-tag fade-up-4">
+      <span>●</span>
+      AUTÉNTICA · NAPOLITANA · NUEVA YORK
+      <span>●</span>
+    </div>
+  </div>
+
+  <div class="flag-stripe-cover">
+    <div></div><div></div><div></div>
+  </div>
+</section>
+
+<!-- ─── BRAND STORY ─── -->
+<section id="story">
+  <div class="section-inner">
+    <span class="section-num">01 — FILOSOFÍA</span>
+    <h2 class="section-title">La <span>herencia</span> que<br>nunca se olvida</h2>
+
+    <div class="story-grid">
+      <div class="story-text">
+        <p>
+          <strong>Giuseppe Santoro</strong> no es una franquicia. Es una declaración. En las calles de Nueva York, los inmigrantes italianos no vendían comida — vendían su alma, su tierra, su memoria. Cada pizza era un puente entre el Vesubio y el Hudson.
+        </p>
+        <p>
+          Llevamos esa misma energía a Medellín. Una ciudad que entiende el orgullo, la ambición y el sabor de lo auténtico. <strong>Sofisticación sin pretensión.</strong> Tradición con actitud neoyorquina.
+        </p>
+        <p>
+          La bandera italiana no es decoración aquí: es <strong>el origen, el orgullo y la promesa.</strong> Verde es la frescura de los ingredientes. Blanco es la honestidad del oficio. Rojo es la pasión que va al horno.
+        </p>
+
+        <ul class="values-list">
+          <li>
+            <div class="val-icon v-verde">●</div>
+            <div><strong>Autenticidad</strong>Recetas que viajan desde Nápoles. Sin atajos, sin fórmulas.</div>
+          </li>
+          <li>
+            <div class="val-icon v-bianco">○</div>
+            <div><strong>Precisión</strong>El estándar neoyorquino: riguroso, sin excusas, perfecto.</div>
+          </li>
+          <li>
+            <div class="val-icon v-rosso">◆</div>
+            <div><strong>Carácter</strong>Una marca con identidad tan fuerte como su masa madre.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="story-pull">
+          "No hacemos pizza.<br>Hacemos que<br>recuerdes tu primera<br><em>vez."</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOGO ─── -->
+<section id="logo">
+  <div class="section-inner">
+    <span class="section-num">02 — IDENTIDAD VISUAL</span>
+    <h2 class="section-title">El <span>símbolo</span></h2>
+
+    <p style="max-width:600px;color:var(--grigio-light);font-size:0.9rem;line-height:1.9;margin-bottom:3rem;">
+      El logo central combina el <strong style="color:var(--bianco);">gorro de chef</strong> —símbolo de maestría— con los <strong style="color:var(--bianco);">cubiertos cruzados</strong>, que hablan de la mesa como ritual sagrado. El anillo exterior porta los tres colores de la bandera italiana: presente, irreductible, poderoso.
+    </p>
+
+    <div class="logo-grid">
+      <!-- Primary on black -->
+      <div class="logo-box lb-primary">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+          <circle cx="90" cy="90" r="82" fill="none" stroke="#004D2A" stroke-width="6"/>
+          <circle cx="90" cy="90" r="76" fill="none" stroke="#C8001E" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M90 8 A82 82 0 0 1 161 130" fill="none" stroke="#004D2A" stroke-width="5" stroke-linecap="round"/>
+          <path d="M161 130 A82 82 0 0 1 19 130" fill="none" stroke="#F5F0E8" stroke-width="5" stroke-linecap="round"/>
+          <path d="M19 130 A82 82 0 0 1 90 8" fill="none" stroke="#C8001E" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="90" cy="68" rx="22" ry="14" fill="#F5F0E8"/>
+          <rect x="68" y="68" width="44" height="10" rx="2" fill="#F5F0E8"/>
+          <ellipse cx="78" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+          <ellipse cx="90" cy="58" rx="10" ry="13" fill="#F5F0E8"/>
+          <ellipse cx="102" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+          <line x1="72" y1="100" x2="108" y2="140" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="108" y1="100" x2="72" y2="140" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="90" y="159" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="10" fill="#F5F0E8" letter-spacing="4">GS</text>
+        </svg>
+        <span class="logo-label">Principal — fondo oscuro</span>
+      </div>
+
+      <!-- On white -->
+      <div class="logo-box lb-white">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+          <circle cx="90" cy="90" r="82" fill="none" stroke="#004D2A" stroke-width="6"/>
+          <circle cx="90" cy="90" r="76" fill="none" stroke="#C8001E" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M90 8 A82 82 0 0 1 161 130" fill="none" stroke="#004D2A" stroke-width="5" stroke-linecap="round"/>
+          <path d="M161 130 A82 82 0 0 1 19 130" fill="none" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+          <path d="M19 130 A82 82 0 0 1 90 8" fill="none" stroke="#C8001E" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="90" cy="68" rx="22" ry="14" fill="#111111"/>
+          <rect x="68" y="68" width="44" height="10" rx="2" fill="#111111"/>
+          <ellipse cx="78" cy="60" rx="10" ry="12" fill="#111111"/>
+          <ellipse cx="90" cy="58" rx="10" ry="13" fill="#111111"/>
+          <ellipse cx="102" cy="60" rx="10" ry="12" fill="#111111"/>
+          <line x1="72" y1="100" x2="108" y2="140" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="108" y1="100" x2="72" y2="140" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="90" y="159" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="10" fill="#111111" letter-spacing="4">GS</text>
+        </svg>
+        <span class="logo-label" style="color:#666;">Versión — fondo claro</span>
+      </div>
+
+      <!-- Mono / Stamp -->
+      <div class="logo-box lb-dark">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+          <circle cx="90" cy="90" r="82" fill="none" stroke="#F5F0E8" stroke-width="4"/>
+          <circle cx="90" cy="90" r="74" fill="none" stroke="#F5F0E8" stroke-width="0.8" stroke-dasharray="3 5"/>
+          <ellipse cx="90" cy="68" rx="22" ry="14" fill="#F5F0E8"/>
+          <rect x="68" y="68" width="44" height="10" rx="2" fill="#F5F0E8"/>
+          <ellipse cx="78" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+          <ellipse cx="90" cy="58" rx="10" ry="13" fill="#F5F0E8"/>
+          <ellipse cx="102" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+          <line x1="72" y1="100" x2="108" y2="140" stroke="#F5F0E8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="108" y1="100" x2="72" y2="140" stroke="#F5F0E8" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="90" y="159" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="10" fill="#F5F0E8" letter-spacing="4">GS</text>
+        </svg>
+        <span class="logo-label">Monobásico — sellos y grabados</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Zone of respect / spacing rules -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div>
+        <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:1rem;color:var(--bianco);">Zona de respeto</h3>
+        <p style="font-size:0.82rem;line-height:1.8;color:var(--grigio-light);">El espacio mínimo alrededor del logo equivale a la altura de la letra <strong style="color:var(--bianco);">G</strong> del nombre. Nunca comprimir, estirar ni rotar el símbolo.</p>
+        <ul style="margin-top:1.2rem;list-style:none;font-size:0.78rem;color:var(--grigio);line-height:2;">
+          <li>✗ No cambiar colores individuales</li>
+          <li>✗ No agregar sombras ni resplandores</li>
+          <li>✗ No usar sobre fondos de color similares al rojo</li>
+          <li>✓ Siempre usar archivos vectoriales originales</li>
+        </ul>
+      </div>
+      <div style="text-align:center;padding:2rem;border:1px dashed rgba(255,255,255,0.1);position:relative;">
+        <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grigio);">Mínimo 32px</div>
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="90" height="90" style="opacity:0.7;">
+          <circle cx="90" cy="90" r="82" fill="none" stroke="#004D2A" stroke-width="6"/>
+          <path d="M90 8 A82 82 0 0 1 161 130" fill="none" stroke="#004D2A" stroke-width="5" stroke-linecap="round"/>
+          <path d="M161 130 A82 82 0 0 1 19 130" fill="none" stroke="#F5F0E8" stroke-width="5" stroke-linecap="round"/>
+          <path d="M19 130 A82 82 0 0 1 90 8" fill="none" stroke="#C8001E" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="90" cy="65" rx="22" ry="14" fill="#F5F0E8"/>
+          <rect x="68" y="65" width="44" height="10" rx="2" fill="#F5F0E8"/>
+          <ellipse cx="78" cy="57" rx="10" ry="12" fill="#F5F0E8"/>
+          <ellipse cx="90" cy="55" rx="10" ry="13" fill="#F5F0E8"/>
+          <ellipse cx="102" cy="57" rx="10" ry="12" fill="#F5F0E8"/>
+          <line x1="72" y1="98" x2="108" y2="138" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="108" y1="98" x2="72" y2="138" stroke="#C8001E" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PALETTE ─── -->
+<section id="palette">
+  <div class="section-inner">
+    <span class="section-num">03 — PALETA DE COLOR</span>
+    <h2 class="section-title">La <span>bandera</span> manda</h2>
+
+    <p style="max-width:580px;color:var(--grigio-light);font-size:0.9rem;line-height:1.9;margin-bottom:3rem;">
+      Los colores de la bandera italiana no son un guiño decorativo — son la arquitectura entera de la marca. Saturados, profundos, orgullosos.
+    </p>
+
+    <div class="palette-hero">
+      <div class="palette-swatch sw-verde">
+        <div class="swatch-name">Verde</div>
+        <div class="swatch-hex">#004D2A</div>
+        <div class="swatch-role">Frescura · Origen · Campos</div>
+      </div>
+      <div class="palette-swatch sw-bianco">
+        <div class="swatch-name" style="color:var(--nero);">Bianco</div>
+        <div class="swatch-hex" style="color:#666;">F5F0E8</div>
+        <div class="swatch-role" style="color:#666;">Honestidad · Masa · Luz</div>
+      </div>
+      <div class="palette-swatch sw-rosso">
+        <div class="swatch-name">Rosso</div>
+        <div class="swatch-hex">#C8001E</div>
+        <div class="swatch-role">Pasión · Tomate · Fuego</div>
+      </div>
+    </div>
+
+    <div class="palette-secondary">
+      <div class="sec-swatch ss-nero">
+        <div style="font-family:var(--font-display);font-size:1rem;letter-spacing:0.1em;color:var(--grigio-light);">Nero</div>
+        <div style="font-size:0.65rem;color:var(--grigio);margin-top:0.3rem;">#111111 — Base</div>
+      </div>
+      <div class="sec-swatch ss-oro">
+        <div style="font-family:var(--font-display);font-size:1rem;letter-spacing:0.1em;color:#3A2800;">Oro</div>
+        <div style="font-size:0.65rem;color:#6A4800;margin-top:0.3rem;">#C8960C — Acento</div>
+      </div>
+      <div class="sec-swatch ss-grigio">
+        <div style="font-family:var(--font-display);font-size:1rem;letter-spacing:0.1em;color:var(--grigio-light);">Grigio</div>
+        <div style="font-size:0.65rem;color:var(--grigio);margin-top:0.3rem;">#333330 — Secundario</div>
+      </div>
+      <div class="sec-swatch ss-crema">
+        <div style="font-family:var(--font-display);font-size:1rem;letter-spacing:0.1em;color:var(--oro-light);">Crema</div>
+        <div style="font-size:0.65rem;color:var(--oro);margin-top:0.3rem;">#2A1A0A — Cálido</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TYPOGRAPHY ─── -->
+<section id="typography">
+  <div class="section-inner">
+    <span class="section-num">04 — TIPOGRAFÍA</span>
+    <h2 class="section-title">Letras que <span>hablan</span></h2>
+
+    <div class="type-hero">
+      <div class="type-display-sample">
+        PIZZA<br>
+        <em>Napoli</em>
+      </div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-specimen">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.1em;color:var(--bianco);line-height:1;">BEBAS NEUE</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.4em;color:var(--grigio);margin-top:0.5rem;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+        </div>
+        <div class="type-info">
+          <span>Display — Carteles, Titulares</span>
+          <span>MAYÚSCULAS</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.78rem;color:var(--grigio-light);line-height:1.7;">Para impacto visual máximo. Carteles, señalética exterior, números de precio, categorías de menú.</p>
+      </div>
+
+      <div class="type-card">
+        <div class="type-specimen">
+          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-style:italic;color:var(--bianco);line-height:1.1;">Playfair Display</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:700;color:var(--grigio);margin-top:0.5rem;letter-spacing:0.1em;">La cucina italiana en Medellín</div>
+        </div>
+        <div class="type-info">
+          <span>Serif — Nombre, Pull quotes</span>
+          <span>Regular / Italic / Bold</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.78rem;color:var(--grigio-light);line-height:1.7;">El corazón de la identidad. Nombre de marca, citas, titulares editoriales. La cursiva transmite carácter artesanal.</p>
+      </div>
+
+      <div class="type-card">
+        <div class="type-specimen">
+          <div style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:1.4rem;color:var(--bianco);line-height:1.3;">DM Sans Light</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--grigio-light);margin-top:0.5rem;line-height:1.7;">Ingredientes frescos seleccionados<br>directamente de productores locales.</div>
+        </div>
+        <div class="type-info">
+          <span>Body — Texto corrido</span>
+          <span>Light 300 / Regular 400</span>
+        </div>
+        <p style="margin-top:1rem;font-size:0.78rem;color:var(--grigio-light);line-height:1.7;">Descripciones de menú, etiquetas, comunicaciones. Peso ligero para elegancia. Nunca Bold.</p>
+      </div>
+
+      <div class="type-card">
+        <div style="padding:1.5rem 0;">
+          <div style="font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rosso);margin-bottom:1rem;">Jerarquía tipográfica</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.15em;color:var(--bianco);">CATEGORÍA</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;color:var(--bianco);margin-top:0.3rem;">Nombre del plato</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:0.8rem;color:var(--grigio-light);margin-top:0.4rem;">Descripción en cuerpo, siempre light.</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.2em;color:var(--oro);margin-top:0.6rem;">$ 28.000</div>
+        </div>
+        <div class="type-info">
+          <span>Sistema aplicado</span>
+          <span>Menú · Señalética</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPLICATIONS ─── -->
+<section id="applications">
+  <div class="section-inner">
+    <span class="section-num">05 — APLICACIONES</span>
+    <h2 class="section-title">La marca <span>vive</span></h2>
+
+    <div class="app-grid">
+
+      <!-- Business Card Front -->
+      <div>
+        <div class="biz-card">
+          <div>
+            <div class="bc-name">Giuseppe<br><em>Santoro</em></div>
+            <div class="bc-role">Pizzeria · New York Style</div>
+            <div class="bc-contact">
+              Medellín, Colombia<br>
+              +57 300 000 0000<br>
+              hola@giuseppesantoro.co
+            </div>
+          </div>
+          <div class="bc-right">
+            <svg viewBox="0 0 60 60" width="55" height="55">
+              <circle cx="30" cy="30" r="28" fill="none" stroke="#004D2A" stroke-width="2.5"/>
+              <path d="M30 3 A28 28 0 0 1 52 44" fill="none" stroke="#004D2A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M52 44 A28 28 0 0 1 8 44" fill="none" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 44 A28 28 0 0 1 30 3" fill="none" stroke="#C8001E" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="30" cy="25" rx="9" ry="6" fill="#F5F0E8"/>
+              <rect x="21" y="25" width="18" height="5" rx="1" fill="#F5F0E8"/>
+              <ellipse cx="26" cy="21" rx="5" ry="6" fill="#F5F0E8"/>
+              <ellipse cx="30" cy="20" rx="5" ry="6.5" fill="#F5F0E8"/>
+              <ellipse cx="34" cy="21" rx="5" ry="6" fill="#F5F0E8"/>
+              <line x1="23" y1="33" x2="37" y2="50" stroke="#C8001E" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="37" y1="33" x2="23" y2="50" stroke="#C8001E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div class="bc-geo">Medellín · CO</div>
+            <div class="bc-star-line">
+              <div class="bc-star"></div>
+              <div class="bc-star"></div>
+              <div class="bc-star"></div>
+            </div>
+          </div>
+        </div>
+        <p class="app-label">Tarjeta de presentación</p>
+      </div>
+
+      <!-- Menu Header -->
+      <div>
+        <div class="menu-header">
+          <div class="menu-flag-bar"></div>
+          <div class="menu-category">— Pizze Classiche —</div>
+          <div class="menu-title">Nuestras <em>Pizzas</em></div>
+          <ul class="menu-items">
+            <li>
+              <div class="menu-item-name-wrap">
+                <span>Margherita</span>
+                <span class="menu-item-desc">Tomate San Marzano, mozzarella fior di latte, albahaca</span>
+              </div>
+              <div class="menu-dot-line"></div>
+              <span class="menu-price">$28.000</span>
+            </li>
+            <li>
+              <div class="menu-item-name-wrap">
+                <span>Diavola</span>
+                <span class="menu-item-desc">Salami picante, calabresa, chile, aceitunas negras</span>
+              </div>
+              <div class="menu-dot-line"></div>
+              <span class="menu-price">$35.000</span>
+            </li>
+            <li>
+              <div class="menu-item-name-wrap">
+                <span>Quattro Stagioni</span>
+                <span class="menu-item-desc">Alcachofas, champiñones, jamón, aceitunas, huevo</span>
+              </div>
+              <div class="menu-dot-line"></div>
+              <span class="menu-price">$38.000</span>
+            </li>
+          </ul>
+        </div>
+        <p class="app-label">Diseño de menú</p>
+      </div>
+
+      <!-- Signage full width -->
+      <div class="signage-full">
+        <div style="position:absolute;inset:0;opacity:0.03;background:repeating-linear-gradient(90deg,var(--bianco) 0,var(--bianco) 1px,transparent 1px,transparent 40px)"></div>
+        <div class="sign-inner">
+          <div class="sign-flag-bar" style="width:280px;margin:0 auto 1.5rem;">
+            <div></div><div></div><div></div>
+          </div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.5em;color:var(--grigio);margin-bottom:0.5rem;">AUTENTICA CUCINA ITALIANA</div>
+          <div class="sign-name">Giuseppe <em>Santoro</em></div>
+          <div class="sign-pizzeria">PIZZERIA</div>
+          <div class="sign-stars">
+            <div class="sign-star"></div>
+            <div class="sign-star big"></div>
+            <div class="sign-star"></div>
+          </div>
+          <div class="sign-flag-bar sign-flag-bar-bottom" style="width:280px;margin:1.5rem auto 0;">
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stamp / Packaging -->
+      <div>
+        <div class="packaging-box">
+          <div class="stamp-circle">
+            <div class="stamp-inner-name">
+              <em>Giuseppe</em>
+              SANTORO
+            </div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:0.55rem;letter-spacing:0.3em;color:var(--grigio);margin-top:0.3rem;">PIZZERIA</div>
+            <div class="stamp-flag-dots">
+              <div class="sfd" style="background:var(--verde);"></div>
+              <div class="sfd" style="background:var(--bianco);opacity:0.5;"></div>
+              <div class="sfd" style="background:var(--rosso);"></div>
+            </div>
+          </div>
+        </div>
+        <p class="app-label">Sello / Packaging</p>
+      </div>
+
+      <!-- Social media post preview -->
+      <div>
+        <div style="background:var(--nero3);border:1px solid rgba(255,255,255,0.06);aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;display:grid;grid-template-columns:1fr 1fr 1fr;">
+            <div style="background:var(--verde);"></div>
+            <div style="background:var(--bianco);opacity:0.4;"></div>
+            <div style="background:var(--rosso);"></div>
+          </div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);opacity:0.06;">
+            <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+              <circle cx="90" cy="90" r="82" fill="none" stroke="#F5F0E8" stroke-width="8"/>
+              <ellipse cx="90" cy="68" rx="22" ry="14" fill="#F5F0E8"/>
+              <rect x="68" y="68" width="44" height="10" rx="2" fill="#F5F0E8"/>
+              <ellipse cx="78" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+              <ellipse cx="90" cy="58" rx="10" ry="13" fill="#F5F0E8"/>
+              <ellipse cx="102" cy="60" rx="10" ry="12" fill="#F5F0E8"/>
+            </svg>
+          </div>
+          <div style="font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rosso);margin-bottom:0.5rem;">HOY EN LA CARTA</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.8rem;color:var(--bianco);line-height:1.1;">Diavola<br>Classica</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:0.7rem;color:var(--grigio-light);margin-top:0.6rem;line-height:1.6;">Masa madre 72h · Horno de leña<br>a 485°C · Solo ingredientes italianos</div>
+          <div style="margin-top:1rem;font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.25em;color:var(--grigio);">@giuseppesantoro.medellin</div>
+        </div>
+        <p class="app-label">Post Redes Sociales</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── VOICE ─── -->
+<section id="voice">
+  <div class="section-inner">
+    <span class="section-num">06 — VOZ DE MARCA</span>
+    <h2 class="section-title">Cómo <span>hablamos</span></h2>
+
+    <div class="voice-grid">
+      <div class="voice-card vc-verde">
+        <h4>CONFIADO</h4>
+        <p>No pedimos disculpas por nuestros precios ni por nuestros estándares. Sabemos lo que hacemos. Lo decimos con calma, no con arrogancia.</p>
+      </div>
+      <div class="voice-card vc-bianco">
+        <h4>HONESTO</h4>
+        <p>Los ingredientes reales tienen sabores reales. Nunca exageramos ni vendemos humo. La pizza habla por sí sola.</p>
+      </div>
+      <div class="voice-card vc-rosso">
+        <h4>APASIONADO</h4>
+        <p>Hay emoción en cada palabra. No somos corporativos, somos artesanos. Medellín y Nápoles se entienden perfectamente.</p>
+      </div>
+    </div>
+
+    <div class="voice-pair">
+      <div class="vp-card wrong">
+        <span class="vp-tag">✗ No decimos</span>
+        <blockquote>"¡Aprovecha la PROMO del día! 2x1 en pizzas. Riquísimas y económicas. Pídelas YA!!"</blockquote>
+      </div>
+      <div class="vp-card right">
+        <span class="vp-tag">✓ Decimos</span>
+        <blockquote>"Hoy la Margherita. Mozzarella llegada esta mañana. Horno a 485°. Mesa para dos a las 7."</blockquote>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Keywords -->
+    <div style="display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:2rem;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid var(--verde);color:var(--verde-light);">ARTESANAL</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid rgba(255,255,255,0.15);color:var(--grigio-light);">72 HORAS FERMENTACIÓN</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid var(--rosso);color:var(--rosso-vivo);">NAPOLITANA</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid rgba(255,255,255,0.15);color:var(--grigio-light);">HORNO DE LEÑA</span>
+      <span style="font-family:'Bebas Iunie',sans-serif;font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid var(--oro);color:var(--oro-light);">SIN ATAJOS</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid rgba(255,255,255,0.15);color:var(--grigio-light);">NEW YORK STYLE</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;padding:0.5rem 1.2rem;border:1px solid rgba(255,255,255,0.15);color:var(--grigio-light);">MEDELLÍN</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-flag">
+    <div></div><div></div><div></div>
+  </div>
+  <p>GIUSEPPE SANTORO PIZZERIA — MANUAL DE MARCA V1.0</p>
+  <p style="margin-top:0.5rem;opacity:0.4;">Nueva York · Nápoles · Medellín · 2026</p>
+</footer>
+
+<script>
+  // Intersection Observer para animaciones de entrada
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.logo-box, .voice-card, .type-card, .app-grid > div').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
